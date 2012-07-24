@@ -1,0 +1,1 @@
+require 'location-one/core'
