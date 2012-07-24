@@ -38,17 +38,23 @@ module LocationOne
     def change_location_by_coords(lat, lon,opt_data={})
       req = Net::HTTP::Post.new(backend[:path])
 
-      body_data = {:latitude => lat, :longitude => lon}.merge(opt_data)
+      body_data = {:action => :change_location,
+                   :latitude => lat,
+                   :longitude => lon}.merge(opt_data)
 
       req.body = body_data.to_json
 
-      res = @http.request(req).body
+      res = @http.request(req)
+
       begin
         @http.finish if @http.started?
       rescue
 
       end
-      res
+      if res.code !='200'
+        raise "Response error code #{res.code}, for #{lat}, #{lon} (#{res.body})."
+      end
+      res.body
     end
 
     def change_location_by_place(place,opt_data={})
