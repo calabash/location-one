@@ -64,8 +64,8 @@ module LocationOne
     end
 
     def change_location_by_place(place,opt_data={})
-      best_result = location_by_place(place)
-      self.change_location_by_coords(best_result.latitude, best_result.longitude,opt_data)
+      best_result = self.location_by_place(place)
+      change_location_by_coords(best_result.latitude, best_result.longitude,opt_data)
     end
 
   end

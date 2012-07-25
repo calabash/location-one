@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    location-one (0.0.2)
+    location-one (0.0.3)
       geocoder (~> 1.1)
       json
 
