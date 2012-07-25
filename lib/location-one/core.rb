@@ -57,10 +57,14 @@ module LocationOne
       res.body
     end
 
-    def change_location_by_place(place,opt_data={})
+    def self.location_by_place(place)
       results = Geocoder.search(place)
       raise "Got no results for #{place}" if results.empty?
-      best_result = results.first
+      results.first
+    end
+
+    def change_location_by_place(place,opt_data={})
+      best_result = location_by_place(place)
       change_location_by_coords(best_result.latitude, best_result.longitude,opt_data)
     end
 
