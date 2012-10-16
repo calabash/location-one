@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency( "geocoder","~>1.1")
   s.add_dependency( "json" )
-  s.add_dependency( "httpclient" )
+  s.add_dependency( "httpclient","~> 2.2")
 
 end
