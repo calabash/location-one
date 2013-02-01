@@ -1,17 +1,17 @@
 PATH
   remote: .
   specs:
-    location-one (0.0.8)
+    location-one (0.0.9)
       geocoder (~> 1.1)
-      httpclient (= 2.2.7)
+      httpclient (= 2.3.2)
       json
 
 GEM
   remote: http://rubygems.org/
   specs:
-    geocoder (1.1.4)
-    httpclient (2.2.7)
-    json (1.7.5)
+    geocoder (1.1.6)
+    httpclient (2.3.2)
+    json (1.7.6)
 
 PLATFORMS
   ruby
